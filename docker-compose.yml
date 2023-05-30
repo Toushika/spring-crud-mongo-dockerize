@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+  spring-crud-mongo-dockerize:
+    build: .
+    ports:
+      - 8888:8080
+    depends_on:
+      - mongodb
