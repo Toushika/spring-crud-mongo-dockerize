@@ -1,21 +1,7 @@
 # spring-crud-mongo-dockerize
 For this docker-compose.yml and Dockerfile should be on the project directory. Here the application will run on port 8888. It ids deteremined on docker-compose.yml
+Please look the docker-compose.yml file of my project.
 
-**docker-compose.yml**
-
-version: '3'
-services:
-  mongodb:
-    image: mongo
-    ports:
-      - 27017:27017
-  spring-crud-mongo-dockerize
-    build: .
-    ports:
-      - 8888:8080
-    depends_on:
-      - mongodb
-      
  **Dockerfile**
   
   FROM adoptopenjdk:11-jre-hotspot
