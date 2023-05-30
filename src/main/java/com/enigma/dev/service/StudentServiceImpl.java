@@ -26,11 +26,13 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> viewStudent() {
         List<Student> studentList = studentRepository.findAll();
+        log.info("StudentServiceImpl :: viewStudent :: studentList :: {}", studentList);
         return studentList;
     }
 
     @Override
     public String updateStudent(Student student, String id) {
+        log.info("StudentServiceImpl :: updateStudent :: student :: {} :: id :: {}", student, id);
         student.setId(id);
         studentRepository.save(student);
         return "Student - " + student.getName() + " has been updated successfully";
